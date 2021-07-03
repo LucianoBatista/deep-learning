@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyterlab = "*"
+numpy = "*"
+install = "*"
+torch = "*"
+torchvision = "*"
+torchaudio = "*"
+pandas = "*"
+scikit-learn = "*"
+nnfs = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

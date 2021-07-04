@@ -13,6 +13,7 @@ torchaudio = "*"
 pandas = "*"
 scikit-learn = "*"
 nnfs = "*"
+matplotlib = "*"
 
 [dev-packages]
 

@@ -38,7 +38,7 @@ Working with MNIST dataset.
 
 The core building block of neural networks is the layer. You can think of a layer as a filter for data: some data goes in, and it comes out in a more useful form. 
 
-Layers extract representations out of the data fed into them, hopefully, representations that are more meaningful for the problema at hand. 
+Layers extract representations out of the data fed into them, hopefully, representations that are more meaningful for the problem at hand. 
 
 Dense layers = fully connected.
 
@@ -243,7 +243,7 @@ The topology of a model, architecture, represents your *hypothesis space*, your 
 
 **look at vector regression to detect bounding box of images!!!**
 
-# Chap 05 / 06
+# Chap 05
 
 ## Generalization
 
@@ -291,3 +291,138 @@ If you work with data points that can be interpolated (some manifold representat
 Here we're searching for **Manifold Interpolation** and not Linear Interpolation
 
 Keep in mind that Interpolation can only help you make sense of things that are very close to what you've seen before: it enables *local generalization*.
+
+Humans are capable of extreme generalization, which is enabled by cognitive mechanisms other than interpolation: abstraction, symbolic models, reasoning logic, common sense, innate priors.
+
+By construction, deep learning is about taking a big, complex curve - a manifold - and incrementally adjusting its parameters until it fits some training points.
+
+## Evaluation of the model
+
+- Training/Testing/Validation
+- K-Fold validation
+- Fancy K-Fold validation
+- ...
+
+### Beting a common-sense baseline
+
+Is very important that we have an understanding if our model is good enough. Beside the business requirements your model needs to beat some baseline, may be a simple model, a random classifier... And from that you can estimate if you are doing some meaningful improvement.
+
+### Things to keep in mind about evaluation
+
+- Data representativeness (distribution of classes, means, metrics...)
+- The arrow of time (data leakage)
+- Redundancy in your data (duplication)
+
+
+## Improving model fit
+
+- Tuning key gradient descent parameters: learning_rate for example
+- Better architecture
+- Increasing model capacity: bigger layers, more layers, different kind of layers (more representional power).
+
+
+## Improving generalization
+
+- dataset curation: better data, less noisy
+
+*"Spending time doing data collection almost always yields a much greater return on investment that spending the same on developing a better model."*
+
+- make sure you have enough data
+- minimize labeling erros
+- clean your data and deal with missing values
+- if you have many features and you aren't sure which ones are actually useful, do feature selection.
+
+### Feature Engineering
+
+Make a problem easier by expressing it in a simpler way. Make the latent manifold smoother, simpler, better-organized.
+
+### Using early stopping
+
+EarlyStopping callback, stop the model as soon as validation metrics have stopped improving.
+
+### Regularizing your model
+
+Set of best pratices that actively impede the model's ability to fit perfectly to the training data. Makes the model simpler and regular.
+
+- reducing the network's size
+- adding weight regularization: principle of **Occam's razor**
+  - *"Given two explanations for something, the explanation most likely to be correct is the simplest one - the one that makes fewer assumptions."*
+
+Flavors:
+- L1 regularization: cost added is proportional to the absolute value of the weight coefficients.
+- L2 regularization: cost added is proportional to the square of the value of the weight coefficients. Is also called of *weight decay*.
+
+- dropout: is one of the most effective and most commonly used regularization techniques for NN (Geoff Hinton). Randomly dropping out (setting to zero).
+  - output = [1, 2, 3, 5, 6]
+  - output_dropped = [0, 2, 3, 0, 6]
+  - The dropout rate is the fraction of the features that are zeroed out, **usually set between 0.2 and 0.5.**
+
+
+# Chap 6
+
+Universal step-by-step blueprint that you can use to approach and solve any machine-learning problem.
+
+Broadly structured in three parts:
+
+- Define the task: understand the problem domain and the business logic underlying.
+- Develop a model
+- Deploy the model
+
+## Define the task
+
+- What will your input data be? What are you trying to predict?
+- What type of ML task are you facing?
+- What do existing solutions look like?
+  - precision of the currently method utilized.
+  - like a research on academia.
+- Are there particular constraints you will need to deal with?
+- Hypothesis we are mading:
+  - our targets can be predicted given your inputs
+  - data that's available is sufficiently informative to learn.
+
+### Collect a dataset
+
+Collect and annotate on supervised learning, this is very time consume.
+
+There is some companies that annotate data to use in ML.
+
+If these data can be annotate locally, do we have people specilized to so? We can construct a platform to data-annotation, like a Shiny app.
+
+### Beware of non-representative data
+
+Related to the way you collect the data. Needs to have the data that you will encounter on real world.
+
+Important concept:
+- **Concept Drift**: The production data change over time, causing model accuracy to gradually decay. We need to be aware of this because is where we'll need to retrain the model on new data.
+
+So, is very important to keep collecting data about the model you're using in production. 
+
+### Understand your data
+
+Do not treat your data as blackboxes:
+- If your data includes images or natural-language, take a look at a few samples directly.
+- If contains numerical features, it's a good idea to plot the histogram of feature values...
+- If locations, plot it on a map
+- Are samples missing values?
+- classificatio? Print the number of instances of each class in your data
+- Check for target leaking
+
+### Choose a measure of success
+
+Do we have a lot of metrics, you can look on kaggle competitions to get insight of some metric.
+
+
+## Develop a model
+
+Only one step in the machine learning workflow! The easiest part!
+
+
+### Prepare the data
+
+Each type of data needs a specific way to deal with. But some pre-processing steps are very common between all types of data.
+
+- vectorization
+- value normalization
+- handling missing values: consider replace missing value with the average or median value for the feature in the dataset.
+  - you can also train a model to predict the missing value based on some other variables.
+  - 

@@ -36,11 +36,11 @@ Very important characteristic of deep learning:
 
 Working with MNIST dataset.
 
-The core building block of neural networks is the layer. You can think of a layer as a filter for data: some data goes in, and it comes out in a more useful form. 
+**The core building block of neural networks is the layer**. You can think of a layer as a **filter for data**: some data goes in, and it comes out in a more useful form. 
 
 Layers extract representations out of the data fed into them, hopefully, representations that are more meaningful for the problem at hand. 
 
-Dense layers = fully connected.
+**Dense layers = fully connected**.
 
 - We set two layers
 
@@ -52,6 +52,11 @@ model = keras.Sequential([
 ```
 
 - We need 3 more stuffs for out model: **optimizer**, **loss function**, **metrics** to monitor during training and testing.
+
+- **optimizer**: the mechanism through which the model will update itself based on training data it sees, so as to improve its performance.
+- **loss function**: how to model will be able to measure its performance on the training data, and this how it will be able to steer itself in the right direction.
+- **Metrics to monitor**: We'll only care about accuracy or other metric.
+- **activation**: how the weighted sum of the input is transformed into an output from a node or nodes in a layer of the network. This kind of transformation allow you to capture different patterns on the data.
 
 We have here similar methods like sklearn: 
 
@@ -106,7 +111,7 @@ In general, elementary geometric operations such as translation, rotation, scali
 
 ## Important!!
 
-A multi-layer neural net made entirely of dense layers without activations would be equivalent to a single dense layer.
+**A multi-layer neural net made entirely of dense layers without activations would be equivalent to a single dense layer.**
 
 This deep nn would just be a linear model in disguise.
 
@@ -131,7 +136,7 @@ Gradient Descent: is the optmization technique that powers modern neural nets.
 
 Being able to derive function is a very powerful tool when it comes to optimization, the task of finding values of x that minimize the value of f(x). 
 
-The derivative completely dewscribes how f(x) evolves as you change x. If you want to reduce the value of f(x), you just need to move x a lttle in the opposite direction from the derivative.
+The derivative completely describes how f(x) evolves as you change x. If you want to reduce the value of f(x), you just need to move x a little in the opposite direction from the derivative.
 
 ### Derivative of a tensor operation: the gradient
 

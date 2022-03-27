@@ -10,6 +10,9 @@ z = y * x
 
 v = torch.tensor([0.1, 1.0, 0.01], dtype=torch.float32)
 z.backward(v)  # dz/dx
+print(f"x {x}")
+print(f"x {x.grad}")
+print(f"z {z}")
 
 # ----ways to eliminate the need of grad on a vector-----------------------
 x2 = torch.randn(3, requires_grad=True)
@@ -23,7 +26,7 @@ with torch.no_grad():
 weights = torch.ones(4, requires_grad=True)
 
 for epoch in range(2):
-    model_output = (weights*3).sum()
+    model_output = (weights * 3).sum()
 
     model_output.backward()
 

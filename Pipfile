@@ -16,6 +16,7 @@ nnfs = "*"
 matplotlib = "*"
 imageio = "*"
 jupyter-contrib-nbextensions = "*"
+seaborn = "*"
 
 [dev-packages]
 

@@ -17,6 +17,9 @@ matplotlib = "*"
 imageio = "*"
 jupyter-contrib-nbextensions = "*"
 seaborn = "*"
+napari = {extras = ["pyqt5"], version = "*"}
+pyqt5 = "*"
+scikit-image = "*"
 
 [dev-packages]
 

@@ -20,6 +20,7 @@ seaborn = "*"
 napari = {extras = ["pyqt5"], version = "*"}
 pyqt5 = "*"
 scikit-image = "*"
+black = "*"
 
 [dev-packages]
 

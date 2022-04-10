@@ -21,6 +21,8 @@ napari = {extras = ["pyqt5"], version = "*"}
 pyqt5 = "*"
 scikit-image = "*"
 black = "*"
+openpyxl = "*"
+ipywidgets = "*"
 
 [dev-packages]
 

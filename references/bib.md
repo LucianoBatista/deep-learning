@@ -11,6 +11,9 @@
 - https://teaching.pages.centralesupelec.fr/deeplearning-lectures-build/01-pytorch-object-detection.html
 - https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html
 - https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
+- https://www.analyticsvidhya.com/blog/2021/06/simplest-way-to-do-object-detection-on-custom-datasets/
+- https://curiousily.com/posts/object-detection-on-custom-dataset-with-yolo-v5-using-pytorch-and-python/
+- https://detecto.readthedocs.io/en/latest/usage/quickstart.html
 
 ## Data Augmentation
 
